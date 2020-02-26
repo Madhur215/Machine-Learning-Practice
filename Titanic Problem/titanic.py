@@ -84,7 +84,12 @@ y_pred2 = clsf.predict(X_test)
 
 
 
-#X_test = sc_X.fit_transform(X_test)
+#Naive Bayes
+from sklearn.naive_bayes import GaussianNB
+nb_clf = GaussianNB()
+nb_clf.fit(X_train, Y_train)
+
+y_pred4 = nb_clf.predict(X_test)
 
 
 #SVM
