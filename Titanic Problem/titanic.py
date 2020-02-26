@@ -46,6 +46,14 @@ testHotEncoder = OneHotEncoder(categorical_features = [1,6])
 X_test = testHotEncoder.fit_transform(X_test).toarray()
 
 
+"""
+from sklearn.preprocessing import MinMaxScaler
+mm_scaler = MinMaxScaler()
+sc_new = mm_scaler.fit_transform(X_train)
+
+mm_sc = MinMaxScaler()
+sc_new_y = mm_sc.fit_transform(X_test)
+"""
 
 
 #FEATURE SCALING
@@ -55,7 +63,6 @@ X_train = sc_X.fit_transform(X_train)
 
 sc_test = StandardScaler()
 X_test = sc_test.fit_transform(X_test)
-
 
 
 

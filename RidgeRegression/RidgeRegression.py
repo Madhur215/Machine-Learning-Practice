@@ -10,13 +10,17 @@ matplotlib.rcParams.update({'font.size': 12})
 
 boston = load_boston()
 boston_df = pd.DataFrame(boston.data, columns=boston.feature_names)
+b2 = boston_df
+
 #print boston_df.info()
 # add another column that contains the house prices which in scikit learn datasets are considered as target
-boston_df['Price']=boston.target
+boston_df['Price'] = boston.target
 #print boston_df.head(3)
 newX = boston_df.drop('Price', axis=1)
 print(newX[0:3])
 newY = boston_df['Price']
+
+
 X_train, X_test, y_train, y_test = train_test_split(newX, newY, test_size=0.3, random_state=3)
 print( len(X_test), len(y_test))
 lr = LinearRegression()
