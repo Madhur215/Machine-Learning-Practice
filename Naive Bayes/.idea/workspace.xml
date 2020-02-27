@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72f7a831-2db9-4fec-89c0-8455185e6393" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../ClothesNeuralNets/.idea/ClothesNeuralNets.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Titanic Problem/titanic.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Titanic Problem/titanic.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +29,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/NaiveBayesClassifier.py" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ClothesNeuralNets" />
   </component>
   <component name="RunManager">
     <configuration name="NaiveBayesClassifier" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -88,26 +89,26 @@
       <screen x="0" y="0" width="1458" height="864" />
     </state>
     <state x="371" y="23" key="CommitChangelistDialog2/0.0.1458.864@0.0.1458.864" timestamp="1582724578255" />
-    <state x="509" y="188" key="FileChooserDialogImpl" timestamp="1582715869352">
+    <state x="509" y="188" key="FileChooserDialogImpl" timestamp="1582814475654">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state x="509" y="188" key="FileChooserDialogImpl/0.0.1458.864@0.0.1458.864" timestamp="1582715869352" />
-    <state width="1436" height="249" key="GridCell.Tab.0.bottom" timestamp="1582724546375">
+    <state x="509" y="188" key="FileChooserDialogImpl/0.0.1458.864@0.0.1458.864" timestamp="1582814475654" />
+    <state width="1436" height="249" key="GridCell.Tab.0.bottom" timestamp="1582793517345">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1436" height="249" key="GridCell.Tab.0.bottom/0.0.1458.864@0.0.1458.864" timestamp="1582724546375" />
-    <state width="1436" height="249" key="GridCell.Tab.0.center" timestamp="1582724546375">
+    <state width="1436" height="249" key="GridCell.Tab.0.bottom/0.0.1458.864@0.0.1458.864" timestamp="1582793517345" />
+    <state width="1436" height="249" key="GridCell.Tab.0.center" timestamp="1582793517345">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1436" height="249" key="GridCell.Tab.0.center/0.0.1458.864@0.0.1458.864" timestamp="1582724546375" />
-    <state width="1436" height="249" key="GridCell.Tab.0.left" timestamp="1582724546374">
+    <state width="1436" height="249" key="GridCell.Tab.0.center/0.0.1458.864@0.0.1458.864" timestamp="1582793517345" />
+    <state width="1436" height="249" key="GridCell.Tab.0.left" timestamp="1582793517345">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1436" height="249" key="GridCell.Tab.0.left/0.0.1458.864@0.0.1458.864" timestamp="1582724546374" />
-    <state width="1436" height="249" key="GridCell.Tab.0.right" timestamp="1582724546375">
+    <state width="1436" height="249" key="GridCell.Tab.0.left/0.0.1458.864@0.0.1458.864" timestamp="1582793517345" />
+    <state width="1436" height="249" key="GridCell.Tab.0.right" timestamp="1582793517345">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
-    <state width="1436" height="249" key="GridCell.Tab.0.right/0.0.1458.864@0.0.1458.864" timestamp="1582724546375" />
+    <state width="1436" height="249" key="GridCell.Tab.0.right/0.0.1458.864@0.0.1458.864" timestamp="1582793517345" />
     <state x="322" y="166" key="Vcs.Push.Dialog.v2" timestamp="1582724586857">
       <screen x="0" y="0" width="1458" height="864" />
     </state>
