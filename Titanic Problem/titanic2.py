@@ -6,10 +6,10 @@ testData = pd.read_csv('test.csv')
 
 
 for family in data:
-    data['FamilySize'] = data['SibSp'] + data['Parch'] + 1
+    data['FamilySize'] = data['SibSp'] + data['Parch']
     
 for family in testData:
-    testData['FamilySize'] = testData['SibSp'] + testData['Parch'] + 1
+    testData['FamilySize'] = testData['SibSp'] + testData['Parch']
     
 
 
@@ -46,12 +46,18 @@ testData['Embarked'] = testData['Embarked'].map({'S': 1, 'Q': 2, 'C': 3}).astype
 
 
 data['FamilyType'] = 0
-data.loc[data['FamilySize'] == 1, 'FamilyType'] = 1
+data.loc[data['FamilySize'] <= 5, 'FamilyType'] = 1
 data.loc[data['FamilySize'] > 5, 'FamilyType'] = 2
     
 testData['FamilyType'] = 0
 testData.loc[testData['FamilySize'] == 1, 'FamilyType'] = 1
 testData.loc[testData['FamilySize'] > 5, 'FamilyType'] = 2
+
+
+data['IsAlone'] = 0
+data.loc[data['FamilySize'] == 0, 'IsAlone'] = 1
+testData['IsAlone'] = 0
+testData.loc[testData['FamilySize'] == 1, 'IsAlone'] = 1
     
     
 data['Sex'] = data['Sex'].map( {'female': 1, 'male': 0} ).astype(int)
@@ -86,6 +92,8 @@ testData.loc[testData['Fare'] > 60, 'Fare'] = 3
 del data['PassengerId']
 #del testData['PassengerId']
 
+
+
 del data['Name']
 del testData['Name']
 
@@ -115,52 +123,50 @@ X_train[:, 2:3] = imputer.fit_transform(X_train[:, 2:3])
 testImputer = Imputer()
 X_test[:, 2:3] = imputer.fit_transform(X_test[:, 2:3])
 
-
 from sklearn.preprocessing import StandardScaler
 sc_X = StandardScaler()
 X_train = sc_X.fit_transform(X_train)
 X_test = sc_X.transform(X_test)
+
+
+
 """
-from sklearn.linear_model import LogisticRegression
-classifier = LogisticRegression(random_state = 90)
-classifier.fit(X_train , Y_train)
-
-
-from sklearn.neighbors import KNeighborsClassifier
-
-clsf = KNeighborsClassifier()
-clsf.fit(X_train, Y_train)
-
-y_pred2 = clsf.predict(X_test)
-
+from sklearn.preprocessing import OneHotEncoder
+hotEncoder = OneHotEncoder()
+X_train = hotEncoder.fit_transform(X_train).toarray()
+hot = OneHotEncoder()
+X_test = hotEncoder.fit_transform(X_test).toarray()
 
 
 from sklearn.naive_bayes import GaussianNB
-
 nb_clf = GaussianNB()
 nb_clf.fit(X_train, Y_train)
-
 y_pred4 = nb_clf.predict(X_test)
 
-"""
-
 from sklearn.svm import SVC
-
 svc_clf = SVC(kernel="linear")
 svc_clf.fit(X_train, Y_train)
-
 y_pred3 = svc_clf.predict(X_test)
 
-#y_pred = classifier.predict(X_test)
-
+from sklearn.neighbors import KNeighborsClassifier
+clsf = KNeighborsClassifier()
+clsf.fit(X_train, Y_train)
+y_pred2 = clsf.predict(X_test)
 """
+
+from sklearn.linear_model import LogisticRegression
+classifier = LogisticRegression(random_state = 90)
+classifier.fit(X_train , Y_train)
+y_pred = classifier.predict(X_test)
+
+
 submission = pd.DataFrame({
         "PassengerId": testData["PassengerId"],
-        "Survived": y_pred3
+        "Survived": y_pred
 }) 
-"""
-result_train = svc_clf.score(X_train, Y_train)
-# submission.to_csv('titanic_new_SVM.csv', index=False)
+
+result_train = classifier.score(X_train, Y_train)
+submission.to_csv('titanic_new_Logistic2.csv', index=False)
 
 
 
