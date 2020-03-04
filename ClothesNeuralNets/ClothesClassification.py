@@ -30,6 +30,11 @@ model.fit(train_images, train_labels, epochs=5)
 # loss, acc = model.evaluate(test_images, test_labels)
 # print(acc)
 
+from sklearn.externals import joblib
+
+joblib.dump(model, 'saved_model.pkl')
+
+
 pred = model.predict(test_images)
 
 for i in range(7):

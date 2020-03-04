@@ -20,6 +20,10 @@ from sklearn.linear_model import LinearRegression
 regressor = LinearRegression()
 regressor.fit(x_train , y_train)
 
+from sklearn.externals import joblib
+joblib.dump(regressor, 'saved_model.pkl')
+
+
 y_pred = regressor.predict(x_test)
 
 plt.scatter(x_train , y_train , color = 'blue')
@@ -34,3 +38,4 @@ plt.scatter(x_test , y_test , color = "red")
 plt.plot(x_train , regressor.predict(x_train) , color = "blue")
 plt.title("Test sets")
 plt.show()
+
