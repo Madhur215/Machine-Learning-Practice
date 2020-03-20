@@ -1,3 +1,33 @@
 {
-
+"intents": [
+  {"tag":  "greeting",
+    "questions": ["Hi", "Hello", "How are you?", "How do you do?", "Is anyone there?", "What's up?", "Are you fine",
+      "Howdy"],
+  "responses": ["Hello!", "Hi", "How are you?", "Hi there, how can I help you?", "May I help you?", "Good to see you again",
+  "I am fine, what about you?", "Hi, how are you doing?"]},
+  {"tag":  "name",
+    "questions": ["Hi, what's your name?", "Hello, may I know your name", "Tell me your name?",
+      "What should I call you?", "Do you have a name?", "what is your name?", "My name is john, what's your name?"],
+  "responses": ["I am Boqs!", "You can call me Boqs!", "My name is Boqs!", "Hello, I am Boqs", "Good to see you, I am Boqs"]
+  },
+  {"tag": "data_structures",
+    "questions": ["what are data structures", "what is a data structures", "data structures", "Examples of data structures"],
+    "responses": ["A data structure is a particular way of organizing data in a computer so that it can be used effectively. e.q- array, linked list, queue, tree"]
+  },
+  {
+    "tag": "array",
+    "questions": ["what is an array", "array", "tell me something about arrays", "what is array data structures", "array data structures","is array a data structure"],
+    "responses": ["An array is a linear data structure consisting of a collection of elements, each identified by at least one array index or key."]
+  },
+  {
+    "tag": "next",
+    "questions": ["tell me what to do next", "what can I do next", "what should I do now?", "what are you going to do next", "I am bored", "I don't know what to do next"],
+    "responses": ["You should utilize your time!", "Do what you love", "I might take a rest", "Do something good for yourself", "Whatever you feel like"]
+  },
+  {
+    "tag": "work",
+    "questions": ["what do you do", "what is your job", "what do you love to do", "what is your work", "tell me about your job", "tell me more about yourself", "do you love what you do"],
+    "responses": ["I am a AI bot. I help others by solving their doubts", "I love to help others by solving their doubts and queries", "My work is to solve the doubta and questions of people loke you", "I like helping others", "I love to discuss questions with others and solve them"]
+  }
+  ]
 }
