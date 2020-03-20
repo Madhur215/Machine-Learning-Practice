@@ -45,9 +45,15 @@ except:
 
     print(train[0])
     """
+
     stemmer = LancasterStemmer()
+    words = [stemmer.stem(w.lower()) for w in words if w != "?"]
+    words = sorted(list(set(words)))
+    tags = sorted(tags)
+
     train = []
     output = []
+
     output_empty = [0 for _ in range(len(tags))]
 
     for x, w in enumerate(pattern_words):
@@ -91,7 +97,7 @@ model.save("model.tflearn")
 
 
 def input_words(sentence, word):
-    bag = []
+    bag = [0 for _ in range(len(word))]
     stm = LancasterStemmer()
     sentence_words = nltk.word_tokenize(sentence)
     sentence_words = [stm.stem(w.lower()) for w in sentence_words]
@@ -105,10 +111,10 @@ def input_words(sentence, word):
 
 
 def start_chat():
-    print("Welcome! Get ready to talk to Boqs!")
+    print("Welcome! Get ready to talk to Boss!")
     while True:
         sentence = input("You: ")
-        if sentence.lower() == "quit":
+        if sentence.lower() == "exit":
             break
 
         results = model.predict([input_words(sentence, words)])

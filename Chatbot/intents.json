@@ -6,9 +6,9 @@
   "responses": ["Hello!", "Hi", "How are you?", "Hi there, how can I help you?", "May I help you?", "Good to see you again",
   "I am fine, what about you?", "Hi, how are you doing?"]},
   {"tag":  "name",
-    "questions": ["Hi, what's your name?", "Hello, may I know your name", "Tell me your name?",
+    "questions": ["Hi, what's your name?", "Hello, may I know your name", "Tell me your name?","May I know your name", "whats your good name",
       "What should I call you?", "Do you have a name?", "what is your name?", "My name is john, what's your name?"],
-  "responses": ["I am Boqs!", "You can call me Boqs!", "My name is Boqs!", "Hello, I am Boqs", "Good to see you, I am Boqs"]
+  "responses": ["I am Boss!", "You can call me Boss!", "My name is Boss!", "Hello, I am Boss", "Good to see you, I am Boss"]
   },
   {"tag": "data_structures",
     "questions": ["what are data structures", "what is a data structures", "data structures", "Examples of data structures"],
