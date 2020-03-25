@@ -40,6 +40,8 @@ testData['Title'] = testData['Title'].map({"Mr" : 1, "Mrs": 2, "Master": 3, "Mis
 data["Embarked"].fillna('S', inplace=True)
 testData["Embarked"].fillna('S', inplace=True)
 
+data['Age'].fillna(data['Age'].mean(), inplace=True)
+testData['Age'].fillna(testData['Age'].mean(), inplace=True)
 
 data['Embarked'] = data['Embarked'].map({'S': 1, 'Q': 2, 'C': 3}).astype(int)
 testData['Embarked'] = testData['Embarked'].map({'S': 1, 'Q': 2, 'C': 3}).astype(int)
@@ -116,12 +118,13 @@ X_train = data.iloc[:, 1:].values
 Y_train = data.iloc[:, 0].values
 X_test = testData.iloc[:, 1:].values
 
+#
+# from sklearn.preprocessing import Imputer
+# imputer = Imputer()
+# X_train[:, 2:3] = imputer.fit_transform(X_train[:, 2:3])
+# testImputer = Imputer()
+# X_test[:, 2:3] = imputer.fit_transform(X_test[:, 2:3])
 
-from sklearn.preprocessing import Imputer
-imputer = Imputer()
-X_train[:, 2:3] = imputer.fit_transform(X_train[:, 2:3])
-testImputer = Imputer()
-X_test[:, 2:3] = imputer.fit_transform(X_test[:, 2:3])
 
 from sklearn.preprocessing import StandardScaler
 sc_X = StandardScaler()
@@ -154,24 +157,34 @@ clsf.fit(X_train, Y_train)
 y_pred2 = clsf.predict(X_test)
 """
 
-from sklearn.linear_model import LogisticRegression
-classifier = LogisticRegression(random_state = 90)
-classifier.fit(X_train , Y_train)
-y_pred = classifier.predict(X_test)
+# from sklearn.linear_model import LogisticRegression
+# classifier = LogisticRegression(random_state = 90)
+# classifier.fit(X_train , Y_train)
+# y_pred = classifier.predict(X_test)
+#
+#
+# submission = pd.DataFrame({
+#         "PassengerId": testData["PassengerId"],
+#         "Survived": y_pred
+# })
+#
+# result_train = classifier.score(X_train, Y_train)
+# submission.to_csv('titanic_new_Logistic2.csv', index=False)
 
+
+from sklearn.ensemble import AdaBoostClassifier
+boost = AdaBoostClassifier(random_state=47)
+boost.fit(X_train, Y_train)
+y_pred = boost.predict(X_test)
+
+print(y_pred)
 
 submission = pd.DataFrame({
         "PassengerId": testData["PassengerId"],
         "Survived": y_pred
-}) 
+})
 
-result_train = classifier.score(X_train, Y_train)
-submission.to_csv('titanic_new_Logistic2.csv', index=False)
-
-
-
-
-
+submission.to_csv('ada_boost.csv', index=False)
 
 
 
