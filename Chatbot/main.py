@@ -6,6 +6,12 @@ import tflearn
 import random
 import json
 import pickle
+import os
+import time
+import speech_recognition as sr
+from gtts import gTTS
+import playsound
+
 
 with open("intents.json") as file:
     data_set = json.load(file)
@@ -77,6 +83,14 @@ except:
     with open("data.pickle", "wb") as f:
         pickle.dump((words, tags, train, output), f)
 
+
+def play_sound(text):
+    text_speech = gTTS(text=text, lang="en")
+    file = "voice.mp3"
+    text_speech.save(file)
+    playsound.playsound(file)
+
+
 tf.reset_default_graph()
 
 network = tflearn.input_data(shape=[None, len(train[0])])
@@ -115,7 +129,7 @@ def start_chat():
     while True:
         sentence = input("You: ")
         if sentence.lower() == "exit":
-            break
+            break   
 
         results = model.predict([input_words(sentence, words)])
         tag = tags[np.argmax(results)]
@@ -123,7 +137,9 @@ def start_chat():
         for tg in data_set["intents"]:
             if tg['tag'] == tag:
                 responses = tg['responses']
-                print(random.choice(responses))
+                answer = random.choice(responses)
+                print(answer)
+                play_sound(answer)
                 break
 
 

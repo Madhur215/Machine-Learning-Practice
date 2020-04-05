@@ -40,7 +40,7 @@ def run():
     points = genfromtxt("Data.csv", delimiter=",")
     # points = pd.read_csv("Data.csv")
     # pq = pd.read_csv('Data.csv')
-    # print(pq)
+    # print(points)
     m_initial = 0
     b_initial = 0
     learningRate = 0.0001
